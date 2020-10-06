@@ -11,7 +11,7 @@ use Clue\React\Socks\Server as SocksServer;
 use React\Socket\Server as SocketServer;
 use Symfony\Component\Process\Process;
 
-class ProxyServerTest extends \PHPUnit_Framework_TestCase
+class ProxyServerTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -19,7 +19,7 @@ class ProxyServerTest extends \PHPUnit_Framework_TestCase
      */
     private static $process;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         self::$process = new Process('exec php ' . __DIR__ . '/../resources/server.php');
         self::$process->start();
@@ -85,7 +85,7 @@ class ProxyServerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('http', $data['headers']['X-Proxy']);
     }
 
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         if (!self::$process->isRunning()) {
             var_dump(self::$process->getErrorOutput());

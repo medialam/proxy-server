@@ -65,6 +65,7 @@ class ProxyServer
         $socket = new SocketServer($this->loop);
 
         $http = new HttpServer($socket);
+
         $http->on('request', function (Request $request, Response $response) {
             $curl = curl_init();
 
@@ -75,7 +76,7 @@ class ProxyServer
             }
 
             $headers[] = 'X-Proxy: http';
-            
+
             curl_setopt($curl, CURLOPT_URL, $request->getUrl()->__toString());
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
