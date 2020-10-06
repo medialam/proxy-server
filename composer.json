@@ -1,10 +1,10 @@
 {
 
-  "name": "serps/proxy-server",
+  "name": "medialam/proxy-server",
   "description": "HTTP and SOCKS proxy server api",
   "type": "library",
   "keywords": ["http", "socks", "proxy"],
-  "homepage": "https://github.com/serps/proxy-server",
+  "homepage": "https://github.com/medialam/proxy-server",
   "license": "Fair",
   "repositories": [
     {
